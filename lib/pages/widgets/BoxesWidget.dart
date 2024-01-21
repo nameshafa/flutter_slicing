@@ -4,7 +4,12 @@ import 'package:google_fonts/google_fonts.dart';
 class BoxesWidget extends StatelessWidget {
   final String image;
   final String text;
-  const BoxesWidget({super.key, required this.image, required this.text});
+  final Color border;
+  const BoxesWidget(
+      {super.key,
+      required this.image,
+      required this.text,
+      required this.border});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +19,7 @@ class BoxesWidget extends StatelessWidget {
       decoration: BoxDecoration(
           color: const Color.fromRGBO(35, 42, 46, 1),
           border: Border.all(
-            color: const Color.fromRGBO(35, 42, 46, 1),
+            color: border,
           ),
           borderRadius: const BorderRadius.all(Radius.circular(20))),
       child: Row(
