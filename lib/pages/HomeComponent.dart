@@ -119,19 +119,19 @@ class _HomeComponentState extends State<HomeComponent> {
                               style: GoogleFonts.montserrat(
                                   textStyle:
                                       const TextStyle(color: Colors.white),
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w500),
+                                  fontSize: 11,
+                                  fontWeight: FontWeight.w700),
                               textAlign: TextAlign.left,
                             ),
                             const SizedBox(
-                              height: 10,
+                              height: 5,
                             ),
                             Text(
                               'What is your favorite time of the day?',
                               style: GoogleFonts.montserrat(
                                   textStyle:
                                       const TextStyle(color: Colors.white),
-                                  fontSize: 19,
+                                  fontSize: 20,
                                   fontWeight: FontWeight.w700),
                             ),
                           ],
@@ -139,22 +139,25 @@ class _HomeComponentState extends State<HomeComponent> {
                       )
                     ],
                   ),
+                  const SizedBox(
+                    height: 7,
+                  ),
                   Text(
                     '"Mine is definetely the peace in the morning"',
                     style: GoogleFonts.montserrat(
-                        textStyle: const TextStyle(color: Colors.white),
+                        textStyle: const TextStyle(
+                            color: Colors.white, fontStyle: FontStyle.italic),
                         fontSize: 12,
                         fontWeight: FontWeight.w300),
                   ),
                   const SizedBox(
-                    height: 13,
+                    height: 15,
                   ),
                   Row(
                     children: const [
                       BoxesWidget(
                         text: 'The peace in the early mornings',
                         image: 'assets/images/aletter.png',
-                        border: Color.fromRGBO(35, 42, 46, 1),
                       ),
                       SizedBox(
                         width: 10,
@@ -162,7 +165,6 @@ class _HomeComponentState extends State<HomeComponent> {
                       BoxesWidget(
                         text: 'The magical golden hours',
                         image: 'assets/images/bletter.png',
-                        border: Color.fromRGBO(35, 42, 46, 1),
                       ),
                     ],
                   ),
@@ -174,15 +176,13 @@ class _HomeComponentState extends State<HomeComponent> {
                       BoxesWidget(
                         text: 'Wind down time after dinner',
                         image: 'assets/images/cletter.png',
-                        border: Color.fromRGBO(35, 42, 46, 1),
                       ),
                       SizedBox(
                         width: 10,
                       ),
                       BoxesWidget(
                         text: 'The serenity pass midnight',
-                        image: 'assets/images/dletter.png',
-                        border: Colors.deepPurple,
+                        image: 'assets/images/cletter.png',
                       ),
                     ],
                   ),
