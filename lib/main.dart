@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertest/pages/HomeComponent.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 void main() => runApp(const HomePage());
 
@@ -24,8 +24,9 @@ class MyApp extends State<HomePage> {
   Widget build(BuildContext context) {
     return MaterialApp(
         home: Scaffold(
-      body: HomeComponent(),
+      body: const HomeComponent(),
       bottomNavigationBar: BottomNavigationBar(
+        elevation: 0.0,
         type: BottomNavigationBarType.fixed,
         backgroundColor: Colors.black,
         unselectedItemColor: Colors.deepPurple,
@@ -33,9 +34,31 @@ class MyApp extends State<HomePage> {
           BottomNavigationBarItem(
               label: 'one', icon: Image.asset('assets/images/poke-card.png')),
           BottomNavigationBarItem(
-              label: 'two', icon: Image.asset('assets/images/Vector.png')),
+            label: 'two',
+            icon: Badge(
+              backgroundColor: Colors.transparent,
+              label: SvgPicture.asset(
+                'assets/images/empty-badge.svg',
+                semanticsLabel: 'My SVG Image',
+                height: 20,
+                width: 20,
+              ),
+              child: Image.asset('assets/images/Vector.png'),
+            ),
+          ),
           BottomNavigationBarItem(
-              label: 'three', icon: Image.asset('assets/images/Icons.png')),
+            label: 'three',
+            icon: Badge(
+              backgroundColor: Colors.transparent,
+              label: SvgPicture.asset(
+                'assets/images/ten-badge.svg',
+                semanticsLabel: 'My SVG Image',
+                height: 20,
+                width: 20,
+              ),
+              child: Image.asset('assets/images/Icons.png'),
+            ),
+          ),
           BottomNavigationBarItem(
               label: 'three', icon: Image.asset('assets/images/User.png')),
         ],

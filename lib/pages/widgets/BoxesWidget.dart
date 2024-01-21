@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class BoxesWidget extends StatefulWidget {
   final String image;
@@ -25,25 +25,39 @@ class _BoxesWidgetState extends State<BoxesWidget> {
         decoration: BoxDecoration(
             color: const Color.fromRGBO(35, 42, 46, 1),
             border: Border.all(
-              color: _containerColor,
+              color: widget.image == 'assets/images/d-letter.svg'
+                  ? const Color.fromRGBO(139, 136, 239, 1)
+                  : _containerColor,
             ),
-            borderRadius: const BorderRadius.all(Radius.circular(20))),
+            borderRadius: const BorderRadius.all(Radius.circular(12))),
         child: Row(
           children: [
             const SizedBox(
-              width: 5,
+              width: 10,
             ),
-            Image.asset(widget.image, color: _iconColor),
+            SvgPicture.asset(
+              widget.image,
+              semanticsLabel: 'My SVG Image',
+              height: 20,
+              width: 20,
+              color: widget.image == 'assets/images/d-letter.svg'
+                  ? null
+                  : _iconColor,
+            ),
+            /*Image.asset(widget.image,
+                color: widget.image == 'assets/images/dletter.png'
+                    ? null
+                    : _iconColor),*/
             const SizedBox(
-              width: 5,
+              width: 10,
             ),
-            Expanded(
+            Flexible(
               child: Text(
                 widget.text,
-                style: GoogleFonts.montserrat(
-                    textStyle: TextStyle(color: _iconColor),
-                    fontSize: 14,
-                    fontWeight: FontWeight.w400),
+                overflow: TextOverflow.clip,
+                style: const TextStyle(
+                    fontFamily: 'Proxima',
+                    color: Color.fromRGBO(196, 196, 196, 1)),
                 textAlign: TextAlign.left,
               ),
             ),
@@ -52,13 +66,14 @@ class _BoxesWidgetState extends State<BoxesWidget> {
       ),
       onTap: () {
         setState(() {
-          _containerColor = _containerColor == Colors.deepPurple
-              ? const Color.fromRGBO(35, 42, 46, 1)
-              : Colors.deepPurple;
+          _containerColor =
+              _containerColor == const Color.fromRGBO(139, 136, 239, 1)
+                  ? const Color.fromRGBO(35, 42, 46, 1)
+                  : const Color.fromRGBO(139, 136, 239, 1);
 
-          _iconColor = _iconColor == Colors.deepPurple
+          _iconColor = _iconColor == const Color.fromRGBO(139, 136, 239, 1)
               ? const Color.fromRGBO(196, 196, 196, 1)
-              : Colors.deepPurple;
+              : const Color.fromRGBO(139, 136, 239, 1);
         });
       },
     ));
