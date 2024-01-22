@@ -44,21 +44,20 @@ class _BoxesWidgetState extends State<BoxesWidget> {
                   ? null
                   : _iconColor,
             ),
-            /*Image.asset(widget.image,
-                color: widget.image == 'assets/images/dletter.png'
-                    ? null
-                    : _iconColor),*/
             const SizedBox(
               width: 10,
             ),
             Flexible(
-              child: Text(
-                widget.text,
-                overflow: TextOverflow.clip,
-                style: const TextStyle(
-                    fontFamily: 'Proxima',
-                    color: Color.fromRGBO(196, 196, 196, 1)),
-                textAlign: TextAlign.left,
+              child: Padding(
+                padding: const EdgeInsets.only(right: 10),
+                child: Text(
+                  widget.text,
+                  overflow: TextOverflow.clip,
+                  style: const TextStyle(
+                      fontFamily: 'Proxima',
+                      color: Color.fromRGBO(196, 196, 196, 1)),
+                  textAlign: TextAlign.left,
+                ),
               ),
             ),
           ],

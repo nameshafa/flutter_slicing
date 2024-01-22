@@ -32,7 +32,7 @@ class _HomeComponentState extends State<HomeComponent> {
                 stops: const [
               .0,
               0.2,
-              0.44,
+              0.49,
               .6
             ])),
       ),
@@ -52,9 +52,6 @@ class _HomeComponentState extends State<HomeComponent> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Container(
-                        width: 40,
-                      ),
                       const Text(
                         'Stroll Bonfire',
                         style: TextStyle(
@@ -72,14 +69,21 @@ class _HomeComponentState extends State<HomeComponent> {
                           fontWeight: FontWeight.w700,
                         ),
                       ),
+                      Container(
+                        width: 5,
+                      ),
                       Image.asset('assets/images/downside-arrow.png'),
                     ],
+                  ),
+                  Container(
+                    height: 4,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Image.asset('assets/images/clock-1.png'),
+                      Image.asset('assets/images/clock-1.png',
+                          width: 10, height: 10),
                       Container(
                         width: 3.27,
                       ),
@@ -92,7 +96,8 @@ class _HomeComponentState extends State<HomeComponent> {
                       Container(
                         width: 9.73,
                       ),
-                      Image.asset('assets/images/person-1.png'),
+                      Image.asset('assets/images/person-1.png',
+                          width: 10, height: 10),
                       Container(
                         width: 4.24,
                       ),
@@ -150,7 +155,8 @@ class _HomeComponentState extends State<HomeComponent> {
                                   height: 12,
                                 ),
                                 Padding(
-                                    padding: EdgeInsets.only(left: 5),
+                                    padding:
+                                        EdgeInsets.only(left: 5, right: 23),
                                     child: Text(
                                         'What is your favorite time of the day?',
                                         style: TextStyle(
@@ -167,7 +173,7 @@ class _HomeComponentState extends State<HomeComponent> {
                         height: 9,
                       ),
                       const Text(
-                          '"Mine is definetely the peace in the morning."',
+                          '"Mine is definitely the peace in the morning."',
                           style: TextStyle(
                               fontFamily: 'Proxima',
                               color: Color.fromRGBO(203, 201, 255, 0.7),
@@ -188,7 +194,7 @@ class _HomeComponentState extends State<HomeComponent> {
                             width: 12,
                           ),
                           BoxesWidget(
-                            text: 'The magically golden hours',
+                            text: 'The magical golden hours',
                             image: 'assets/images/b-letter.svg',
                           ),
                         ],
@@ -220,31 +226,34 @@ class _HomeComponentState extends State<HomeComponent> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: const [
-                              Text(
-                                'Pick your option.',
-                                style: TextStyle(
-                                    fontFamily: 'Proxima',
-                                    color: Color.fromRGBO(229, 229, 229, 1),
-                                    fontSize: 11,
-                                    fontWeight: FontWeight.w400),
-                                textAlign: TextAlign.left,
-                              ),
-                              SizedBox(
-                                height: 2,
-                              ),
-                              Text(
-                                'See who has a similar mind.',
-                                style: TextStyle(
-                                    fontFamily: 'Proxima',
-                                    color: Colors.white,
-                                    fontSize: 11,
-                                    fontWeight: FontWeight.w400),
-                                textAlign: TextAlign.left,
-                              ),
-                            ],
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: const [
+                                Text(
+                                  'Pick your option.',
+                                  style: TextStyle(
+                                      fontFamily: 'Proxima',
+                                      color: Color.fromRGBO(229, 229, 229, 1),
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.w400),
+                                  textAlign: TextAlign.left,
+                                ),
+                                SizedBox(
+                                  height: 2,
+                                ),
+                                Text(
+                                  'See who has a similar mind.',
+                                  style: TextStyle(
+                                      fontFamily: 'Proxima',
+                                      color: Colors.white,
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.w400),
+                                  textAlign: TextAlign.left,
+                                ),
+                              ],
+                            ),
                           ),
                           Row(
                             children: [
