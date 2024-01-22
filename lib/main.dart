@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertest/pages/HomeComponent.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter/services.dart';
 
 void main() => runApp(const HomePage());
 
@@ -13,22 +14,19 @@ class HomePage extends StatefulWidget {
 
 class MyApp extends State<HomePage> {
   int selectedIndex = 0;
-  final widgetOptions = [
-    const Text('Beer List'),
-    const Text('Add new beer'),
-    const Text('Favourites'),
-    const Text('User')
-  ];
-
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
     return MaterialApp(
         home: Scaffold(
       body: const HomeComponent(),
       bottomNavigationBar: BottomNavigationBar(
         elevation: 0.0,
         type: BottomNavigationBarType.fixed,
-        backgroundColor: Colors.black,
+        backgroundColor: Color.fromARGB(255, 15, 15, 15),
         unselectedItemColor: Colors.deepPurple,
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
@@ -40,8 +38,6 @@ class MyApp extends State<HomePage> {
               label: SvgPicture.asset(
                 'assets/images/empty-badge.svg',
                 semanticsLabel: 'My SVG Image',
-                height: 20,
-                width: 20,
               ),
               child: Image.asset('assets/images/Vector.png'),
             ),
@@ -53,8 +49,6 @@ class MyApp extends State<HomePage> {
               label: SvgPicture.asset(
                 'assets/images/ten-badge.svg',
                 semanticsLabel: 'My SVG Image',
-                height: 20,
-                width: 20,
               ),
               child: Image.asset('assets/images/Icons.png'),
             ),
